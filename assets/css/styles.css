@@ -5,8 +5,10 @@
   --font-family: "Roboto", sans-serf;
   --normal-font: 400;
   --bold-font: 700;
+  --bolder-font: 700;
   --bolder-font: 900;
   --bg-color: #fcfcfc;
+  --secondary-bg-color: #fff;
   --primary-color: #4756df;
   --secondary-color: #ff7235;
   --primary-shadow: #8b8eaf;
@@ -27,7 +29,6 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 2px solid red; */
 }
 
 ul {
@@ -46,20 +47,14 @@ a:hover {
 body {
   font-family: var(--font-family);
 }
-
-section {
-  /* max-width: 1100px;
-  margin: auto; */
-}
-
 /* CSS Resets end */
 
 /* Navbar */
 nav {
-  position: sticky;
+  position: sticky; /* remains at top */
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2; /* makes sure navbar displays over any other element on web page */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,6 +71,7 @@ nav a {
   color: var(--primary-color);
   transition: var(--transition);
 }
+
 nav a:hover {
   color: var(--secondary-color);
   border-bottom: 2px solid var(--secondary-color);
@@ -90,14 +86,50 @@ nav ul li {
   font-weight: var(--bold-font);
 }
 
-.burger-menu {
+nav button {
+  background: transparent;
+  border: 3px solid var(--primary-color, #000);
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.button-one {
+  display: none;
+}
+
+.button-one .line {
+  transition: y 300ms ease-in 300ms, rotate 300ms ease-in, opacity 0ms 300ms;
+  transform-origin: center;
+}
+
+.button-one[aria-expanded="true"] .line {
+  transition: y 300ms ease-in, rotate 300ms ease-in 300ms, opacity 0ms 300ms;
+}
+
+.button-one[aria-expanded="true"] :is(.top, .bottom) {
+  y: 45;
+}
+
+.button-one[aria-expanded="true"] .top {
+  rotate: 45deg;
+}
+
+.button-one[aria-expanded="true"] .middle {
+  opacity: 0;
+}
+
+.button-one[aria-expanded="true"] .bottom {
+  rotate: -45deg;
+}
+
+/* .burger-menu {
   color: var(--primary-color);
   font-size: 2rem;
   border: 0;
   background-color: transparent;
   cursor: pointer;
   display: none;
-}
+} */
 /* Navbar ends */
 
 /* Hero section */
@@ -111,15 +143,17 @@ nav ul li {
 }
 
 .hero img {
-  height: 37.5rem;
-  width: 37.5rem;
+  border-radius: 10px;
+  height: 25.5rem;
+  width: 32.5rem;
+  padding: 4rem;
 }
 
 .bio {
-  width: 25rem;
+  width: 23rem;
   padding: 0.625rem;
   border-radius: 6px;
-  box-shadow: 0px 2px 15px 2px var(--primary-shadow);
+  box-shadow: 0px 2px 10px 1px var(--primary-shadow);
 }
 
 .bio h1 {
@@ -147,11 +181,69 @@ nav ul li {
   line-height: var(--line-height);
   padding: 0.4rem;
 }
+
+.gallery {
+  width: 300px;
+  height: auto;
+}
+
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+.pic {
+  max-width: 10%;
+  height: auto;
+  margin-top: 10vh;
+}
+
+.pic-ctn > img {
+  position: relative;
+  top: 0;
+  left: 17rem;
+  opacity: 0;
+  animation: display 10s infinite;
+}
+
+img:nth-child(2) {
+  animation-delay: 2s;
+}
+
+img:nth-child(3) {
+  animation-delay: 4s;
+}
+
+img:nth-child(4) {
+  animation-delay: 6s;
+}
+
+img:nth-child(5) {
+  animation-delay: 8s;
+}
 /* More about ends */
 
 /* Skills section */
 .skills {
-  max-width: 68.75rem;
+  max-width: 68.75rem; /*push content to center*/
   margin: auto;
   text-align: center;
   margin-top: 2.5rem;
@@ -169,6 +261,14 @@ nav ul li {
   width: 11.875rem;
   height: 11.25rem;
 }
+
+.icon-card {
+  background-color: var(--secondary-bg-color);
+  border-radius: 11px;
+  box-shadow: 0 3px 10px var(--secondary-shadow);
+  padding: 20px;
+  margin: 10px;
+}
 /* Skills section ends */
 
 /* Projects section */
@@ -185,6 +285,7 @@ nav ul li {
 
 .projects-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
@@ -198,8 +299,99 @@ nav ul li {
   text-align: center;
   width: 21.875rem;
   padding: 1rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
+.project-container .project-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.project-container:hover {
+  background: var(--secondary-bg-color);
+  transform: translateY(0);
+}
+
+.face {
+  width: 300px;
+  height: 10rem;
+  transition: 0.5s;
+}
+
+.face1 {
+  position: relative;
+  left: 5rem;
+  background: var(--secondary-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateX(0);
+}
+
+.project-card:hover .face1 {
+  background: var(--secondary-bg-color);
+  transform: translate(-5rem);
+}
+
+.face1 .content {
+  opacity: 0.8;
+  transition: 0.5;
+}
+
+.project-card:hover .content {
+  opacity: 1;
+}
+
+.face1 .content img {
+  max-width: 100px;
+}
+
+.face1 .content h3 {
+  margin: 10px 0 0;
+  padding: 0;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.face2 {
+  position: relative;
+  background: var(--secondary-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  /* box-shadow: 10px 20px 20px var(--secondary-shadow); */
+  transform: translateX(-5rem);
+}
+
+.project-card:hover .face2 {
+  transform: translate(1em);
+}
+
+.face2 .content p {
+  margin: 0;
+  padding: 0;
+}
+
+.face2 .content a {
+  margin: 15px 0 0;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: var(--secondary-color);
+  padding: 5px;
+  border: 1px solid var(--secondary-color);
+}
+
+.face2 .content a:hover {
+  background: var(--bg-color);
+  color: var(--primary-color);
+}
 .project-container p {
   padding: 0.4rem;
 }
@@ -212,6 +404,13 @@ nav ul li {
   margin-bottom: var(--bottom-margin);
 }
 
+.project-card {
+  background-color: var(--secondary-bg-color);
+  border-radius: 11px;
+  box-shadow: 0 3px 10px var(--primary-shadow);
+  padding: 20px;
+  margin: 10px;
+}
 /* Projects section ends */
 
 /* Contacts section */
@@ -233,7 +432,7 @@ nav ul li {
 }
 
 .contact-form-container label {
-  line-height: 2.7em;
+  line-height: 2.7rem;
   font-weight: var(--bold-font);
   color: var(--primary-color);
 }
@@ -263,7 +462,7 @@ nav ul li {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
-  background-color: #fff;
+  background-color: var(--secondary-bg-color);
   border: 2px solid var(--primary-color);
   border-radius: 5px;
   font-size: 1rem;
@@ -296,14 +495,15 @@ nav ul li {
 /* Scroll to top button */
 .scroll-up {
   position: fixed;
-  right: 0.5%;
-  bottom: 3%;
+  right: 0.7%;
+  bottom: 2%;
   cursor: pointer;
 }
 
 .up-arrow {
-  width: 3rem;
-  height: 3rem;
+  color: var(--primary-color);
+  width: 2.3rem;
+  height: 2.3rem;
 }
 /* Scroll to top button ends */
 
@@ -317,27 +517,15 @@ footer {
 /* Footer section ends */
 
 /* General (utilities) */
-.icon-card {
-  background-color: #fff;
-  border-radius: 11px;
-  box-shadow: 0 3px 10px var(--secondary-shadow);
-  padding: 20px;
-  margin: 10px;
-}
-
-.project-card {
-  background-color: #fff;
-  border-radius: 11px;
-  box-shadow: 0 3px 10px var(--primary-shadow);
-  padding: 20px;
-  margin: 10px;
-}
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 720px) {
+  /*changes reflects on screen with a width of 720px and below */
+
   nav {
     padding: 1.5rem 1rem;
   }
+
   nav ul {
     position: fixed;
     background-color: var(--bg-color);
@@ -354,7 +542,7 @@ footer {
     margin: 8px;
   }
 
-  .burger-menu {
+  .button-one {
     display: block;
   }
 
@@ -369,8 +557,10 @@ footer {
   }
 
   .hero img {
-    height: 37.5rem;
-    width: 30rem;
+    height: 33.5rem;
+    width: 32rem;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
   }
 
   .bio {
@@ -389,6 +579,59 @@ footer {
 
   .more-about p {
     text-align: justify;
+  }
+
+  .pic {
+    max-width: 14%;
+    height: auto;
+    margin-top: 5vh;
+  }
+
+  .pic-ctn > img {
+    position: relative;
+    top: 0;
+    left: 6rem;
+    opacity: 0;
+    animation: display 10s infinite;
+  }
+
+  @keyframes display {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    10% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    30% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+  }
+
+  img:nth-child(2) {
+    animation-delay: 2s;
+  }
+
+  img:nth-child(3) {
+    animation-delay: 4s;
+  }
+
+  img:nth-child(4) {
+    animation-delay: 6s;
+  }
+
+  img:nth-child(5) {
+    animation-delay: 8s;
   }
 
   .icon {

@@ -26,69 +26,128 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <title>Jane Doe | Web Developer</title>
+    <title>Mike Lightz | Web Developer</title>
   </head>
 
   <body>
     <!-- Navbar -->
     <nav>
-      <h1>JANE DOE</h1>
+      <h1>MikeLightz.play</h1>
       <ul class="navigation">
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-      <button class="burger-menu" id="burger-menu">
-        <ion-icon class="bars" name="menu-outline"></ion-icon>
-        <!-- <ion-icon class="times" name="close-outline"></ion-icon> -->
+      <button
+        class="button-one"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <svg class="hamburger" viewBox="0 0 100 100" width="30">
+          <rect
+            class="line top"
+            width="80"
+            height="10"
+            x="10"
+            y="25"
+            rx="5"
+          ></rect>
+          <rect
+            class="line middle"
+            width="80"
+            height="10"
+            x="10"
+            y="50"
+            rx="5"
+          ></rect>
+          <rect
+            class="line bottom"
+            width="80"
+            height="10"
+            x="10"
+            y="75"
+            rx="5"
+          ></rect>
+        </svg>
       </button>
+      <!-- <button class="burger-menu" id="burger-menu">
+        <ion-icon class="bars" name="menu-outline"></ion-icon>
+      </button> -->
     </nav>
-    
-    <p> 0024 </p>
 
     <!-- Hero Section -->
     <section class="hero" id="about">
       <img
-        src="assets/images/wfh_1.svg"
-        alt="jane-doe"
-        loading="lazy"
+        src="assets/images/arlenes.jpeg"
+        alt="Mike Lightz standing in front of Arlenes Grocery bar in Lower East Side, NYC"
         class="hero-img"
       />
       <div class="bio animate__animated animate__shakeX">
         <h2 class="bio-title">About Me</h2>
         <p class="bio-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia sed
-          dolorem fugit sapiente porro veniam pariatur dolore nostrum delectus
-          inventore tempore minus nemo, iste ullam illo laboriosam maiores
-          repudiandae quos!
+          Mike Lightz is a web developer from Virginia Beach, VA and currently
+          based in Charlotte, NC. He is one part of The Social Contract music
+          and art collective.
         </p>
       </div>
     </section>
 
-    <!-- More about -->
+    <!-- More About Section -->
     <section class="more-about">
       <h2>More About Me</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-        nesciunt excepturi quos obcaecati incidunt voluptatem ipsam sunt ipsum,
-        autem deleniti cupiditate molestias quis unde quae totam porro dicta
-        iure animi inventore, veniam hic! Omnis nulla, delectus a voluptatibus
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
-        nostrum dolor minus, libero delectus praesentium perferendis
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
-        consequuntur labore? Ea totam voluptas amet!
-      </p>
+      <div class="more-hero" id="about">
+        <div class="info">
+          <p>
+            As a self-taught junior software developer, Michael is passionate
+            about learning and expanding his skills in software development.
+            With a strong foundation in HTML, CSS, & Javascript, he is eager to
+            tackle new challenges and make a positive impact in the industry.
+            Michael has shown strong self-discipline and resilience on his way
+            to earning several certifications through online courses to gain a
+            comprehensive understanding of software development principles and
+            practices. During his training, he worked on a local coffee shop's
+            beer & wine menu to develop his programming skills, which helped him
+            to gain major practical experience in developing software solutions.
+            Michael is proficient in front-end development, and is eager to
+            learn more about the back-end with languages like Node.js. He builds
+            primarily with the React library & Bootstrap framework, and is
+            working to add Angular.js and Vue to the stack.
+          </p>
+          <p>
+            As exhibited by his multiple leadership positions in various
+            customer service jobs, Michael is great at relationship building &
+            comfortable working in a collaborative team environment. Currently,
+            Michael is seeking an entry-level software development position to
+            further his skills and contribute to the success of a software
+            development team. He is excited to apply his knowledge and skills to
+            develop software solutions that meet the needs of clients and users.
+            Michael holds a BA in Film Studies from the University of North
+            Carolina at Wilmington where he looks to sound design for films. In
+            his free time, he enjoys music production, yoga & exercise, reading,
+            and outdoor hikes. He is committed to continuous learning and
+            improvement through participation in online communities and
+            attending industry events. As a motivated and enthusiastic junior
+            software developer, Michael is eager to make a meaningful
+            contribution to the field of software development and become a
+            valuable asset to any team.
+          </p>
+        </div>
+        <div class="gallery-container">
+          <div class="pic-ctn">
+            <img src="assets/images/face1.png" alt="" class="pic" />
+            <img src="assets/images/studio1.png" alt="" class="pic" />
+            <img src="assets/images/city1.png" alt="" class="pic" />
+            <img src="assets/images/pics1.png" alt="" class="pic" />
+            <img src="assets/images/face2.png" alt="" class="pic" />
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Skills section -->
     <section class="skills" id="skills">
-      <h2 class="skill-header">My Top Skills</h2>
-
+      <h2 class="skill-header">My line Skills</h2>
       <div class="skills-wrapper">
         <div class="first-set animate__animated animate__pulse">
           <img
@@ -110,10 +169,9 @@
             class="icon icon-card"
           />
         </div>
-
         <div class="second-set animate__animated animate__pulse">
           <img
-            src="assets/icons/icons8-bootstrap.svg"
+            src="assets/icons/ChatGPT_logo.svg"
             alt=""
             loading="lazy"
             class="icon icon-card"
@@ -139,50 +197,179 @@
       <h2 class="projects-title">Some of my Recent Projects</h2>
       <div class="projects-container">
         <div class="project-container project-card">
-          <img
-            src="assets/images/expenseTracker.png"
-            alt="expense-tracker"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">Expense Tracker</h3>
-          <p class="project-details">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            ratione vel inventore labore commodi modi quos culpa aut saepe!
-            Alias!
-          </p>
-          <a href="#" target="_blank" class="project-link">Check it Out</a>
+          <div class="face face1">
+            <div class="content">
+              <img
+                src="assets/images/calculator.png"
+                alt="calculator"
+                loading="lazy"
+                class="project-pic"
+              />
+              <h3 class="project-title">Blushulator</h3>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p class="project-details">Javascript calculator</p>
+              <a
+                href="https://mikelightz.github.io/blushulator/"
+                target="_blank"
+                class="project-link"
+                >Check It Out!</a
+              >
+            </div>
+          </div>
         </div>
         <div class="project-container project-card">
-          <img
-            src="assets/images/netflixClone.png"
-            alt="netflic-clone"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">Netflix Clone</h3>
-          <p class="project-details">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            ratione vel inventore labore commodi modi quos culpa aut saepe!
-            Alias!
-          </p>
-          <a href="#" target="_blank" class="project-link">Check it Out</a>
+          <div class="face face1">
+            <div class="content">
+              <img
+                src="assets/images/beerandwinemenu.png"
+                alt="beer & wine menu"
+                loading="lazy"
+                class="project-pic"
+              />
+              <h3 class="project-title">Beer & Wine Menu</h3>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p class="project-details">
+                Beer & wine menu for Summit Coffee in Charlotte, NC
+              </p>
+              <a
+                href="http://summit-beer-menu.surge.sh/"
+                target="_blank"
+                class="project-link"
+                >Check It Out!</a
+              >
+            </div>
+          </div>
         </div>
         <div class="project-container project-card">
-          <img
-            src="assets/images/greenyEarth.png"
-            alt="greeny-earth"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">Greeny Earth</h3>
-          <p class="project-details">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
-            ratione vel inventore labore commodi modi quos culpa aut saepe!
-            Alias!
-          </p>
-          <a href="#" target="_blank" class="project-link">Check it Out</a>
+          <div class="face face1">
+            <div class="content">
+              <img
+                src="assets/images/beatmachine.png"
+                alt="beat-machine"
+                loading="lazy"
+                class="project-pic"
+              />
+              <h3 class="project-title">MPC 3000</h3>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p class="project-details">
+                Playable MPC beat machine; built with react
+              </p>
+              <a
+                href="https://mikelightz.github.io/Mike-Lightz-MPC/"
+                target="_blank"
+                class="project-link"
+                >Check It Out!</a
+              >
+            </div>
+          </div>
         </div>
+        <div class="project-container project-card">
+          <div class="face face1">
+            <div class="content">
+              <img
+                src="assets/images/markdownpreviewer.png"
+                alt="markdown previewer"
+                loading="lazy"
+                class="project-pic"
+              />
+              <h3 class="project-title">Markdown Previewer</h3>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p class="project-details">In-line text editor</p>
+              <a
+                href="https://mikelightz.github.io/Markdown-Previewer-Mike-Lightz/"
+                target="_blank"
+                class="project-link"
+                >Check it Out!</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="project-container project-card">
+          <div class="face face1">
+            <div class="content">
+              <img
+                src="assets/images/hiphopquotemachine.png"
+                alt="hip-hop quote generator"
+                loading="lazy"
+                class="project-pic"
+              />
+              <h3 class="project-title">Hip-Hop Quote Generator</h3>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p class="project-details">Generates hip-hop lyrics & quotes</p>
+              <a
+                href="https://mikelightz.github.io/random_hip_hop_quote_machine_generator/"
+                target="_blank"
+                class="project-link"
+                >Check It Out!</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="project-container project-card">
+          <div class="face face1">
+            <div class="content">
+              <img
+                src="assets/images/pomodoroclock.png"
+                alt="pomodoro-clock"
+                loading="lazy"
+                class="project-pic"
+              />
+              <h3 class="project-title">Pomodoro Clock</h3>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p class="project-details">
+                25 minute work timer with a 5 minute break
+              </p>
+              <a
+                href="https://mikelightz.github.io/25-5-clock/"
+                target="_blank"
+                class="project-link"
+                >Check It Out!</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- <div class="project-container project-card">
+          <div class="face face1">
+            <div class="content">
+              <img
+                src="assets/images/d3bargraph.png"
+                alt="gdp-chart"
+                loading="lazy"
+                class="project-pic"
+              />
+              <h3 class="project-title">US GDP Graph</h3>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p class="project-details">Bar chart of US GDP created with D3</p>
+              <a
+                href="https://mikelightz.github.io/gdp-chart/"
+                target="_blank"
+                class="project-link"
+                >Check It Out!</a
+              >
+            </div>
+          </div>
+        </div> -->
       </div>
     </section>
 
@@ -191,7 +378,7 @@
       <h2>Get In Touch With Me</h2>
       <div class="contact-form-container">
         <div class="contact-form">
-          <form action="https://formspree.io/f/xyylnggw" method="POST">
+          <form action="POST" data-netlify="true">
             <div class="form-control">
               <label for="name">Name</label>
               <input
@@ -239,48 +426,57 @@
 
     <!-- Social accounts - Fixed to the right -->
     <div class="socials">
-      <a href="#" target="_blank"
-        ><img
+      <a href="https://twitter.com/lightzmike" target="_blank">
+        <img
           src="assets/icons/icons8-twitter-circled.gif"
           alt="Twitter"
           loading="lazy"
           class="socicon"
-      /></a>
-      <a href="#" target="_blank"
-        ><img
+        />
+      </a>
+      <a href="https://www.instagram.com/mikelightz/" target="_blank">
+        <img
           src="assets/icons/icons8-instagram.gif"
           alt="Instagram"
           loading="lazy"
           class="socicon"
-      /></a>
-      <a href="#" target="_blank"
-        ><img
+        />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/michael-edwards-55964195/"
+        target="_blank"
+      >
+        <img
           src="assets/icons/icons8-linkedin-circled.gif"
           alt="Linkedin"
           loading="lazy"
           class="socicon"
-      /></a>
-      <a href="#" target="_blank"
-        ><img src="assets/icons/icons8-github.gif" alt="Github" class="socicon"
-      /></a>
+        />
+      </a>
+      <a href="https://github.com/mikelightz" target="_blank">
+        <img
+          src="assets/icons/icons8-github.gif"
+          alt="Github"
+          loading="lazy"
+          class="socicon"
+        />
+      </a>
     </div>
 
-    <!-- Scroll to top -->
-    <i class="scroll-up" id="scroll-up"
-      ><img
-        src="assets/icons/icons8-upward-arrow.gif"
-        class="socicon up-arrow"
-        alt=""
-    /></i>
-
     <!-- Footer section -->
+    <i class="scroll-up" id="scroll-up">
+      <img
+        src="assets/icons/up-arrow-svgrepo.svg"
+        class="socicon up-arrow"
+        alt="scroll-up"
+      />
+    </i>
+
     <footer>
-      <p class="copy">&copy; Copyright 2021</p>
+      <p class="copy">&copy; Copright 2023</p>
       <p class="copy">
         Built with &#x2661; by
-        <a href="https://twitter.com/koladechris" target="_blank"
-          >Kolade Chris (Ksound)</a
-        >
+        <a href="#" target="_blank">Michael Edwards Jr (Mike Lightz)</a>
       </p>
     </footer>
 
